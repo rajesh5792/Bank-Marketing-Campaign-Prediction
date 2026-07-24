@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Confirm</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/review.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container review-container">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="review-hero">
+
+        <div class="hero-badge">
+            STEP 5 OF 5
+        </div>
+
+        <h1 class="hero-title">
+            Review & Confirm
+        </h1>
+
+        <p class="hero-subtitle">
+            Verify your customer information before generating the AI prediction.
+        </p>
+
+        <div class="progress-value">
+            100%
+        </div>
+
+        <div class="progress review-progress">
+
+            <div
+                class="progress-bar"
+                style="width:100%">
+            </div>
+
+        </div>
+
+        <div class="ready-status">
+
+            <span class="status-icon">✓</span>
+
+            Ready for Prediction
+
+        </div>
+
+    </section>
+<div class="dashboard-grid">
+
+<section class="section-card">
+
+    <div class="section-header">
+
+        <div class="section-accent"></div>
+
+        <div>
+
+            <h2>
+    <i class="bi bi-person-circle"></i>
+    Customer Information
+</h2>
+
+            <p>Basic customer details</p>
+
+        </div>
+
+    </div>
+
+    <div class="details-grid">
+
+        <div class="detail-card">
+
+            <span class="detail-label">Age</span>
+
+            <span class="detail-value">{{ age }}</span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">Job</span>
+
+            <span class="detail-value">{{ job|replace("_"," ")|title }}</span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">Marital Status</span>
+
+            <span class="detail-value">{{ marital|title }}</span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">Education</span>
+
+            <span class="detail-value">{{ education|replace("."," ")|replace("_"," ")|title }}</span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FINANCIAL PROFILE ================= -->
+
+<section class="section-card">
+
+    <div class="section-header">
+
+        <div class="section-accent"></div>
+
+        <div>
+
+            <h2>
+    <i class="bi bi-wallet2"></i>
+    Financial Profile
+</h2>
+
+            <p>Customer banking information</p>
+
+        </div>
+
+    </div>
+
+    <div class="details-grid">
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Housing Loan
+            </span>
+
+            <span class="detail-value">
+                {{ housing|title }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Personal Loan
+            </span>
+
+            <span class="detail-value">
+                {{ loan|title }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Credit Default
+            </span>
+
+            <span class="detail-value">
+                {{ default|title }}
+            </span>
+
+        </div>
+
+        <!-- Empty tile to keep symmetry -->
+
+        <div class="detail-card empty-card">
+
+            <span class="empty-icon">
+                💳
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= CAMPAIGN INFORMATION ================= -->
+
+<section class="section-card">
+
+    <div class="section-header">
+
+        <div class="section-accent"></div>
+
+        <div>
+
+            <h2>
+                <i class="bi bi-telephone"></i>
+                Campaign Information
+            </h2>
+
+            <p>Marketing campaign details</p>
+
+        </div>
+
+    </div>
+
+    <div class="details-grid">
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Contact
+            </span>
+
+            <span class="detail-value">
+                {{ contact|title }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Month
+            </span>
+
+            <span class="detail-value">
+                {{ month|title }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Day of Week
+            </span>
+
+            <span class="detail-value">
+                {{ day_of_week|title }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Campaign Contacts
+            </span>
+
+            <span class="detail-value">
+                {{ campaign }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Previous Contacts
+            </span>
+
+            <span class="detail-value">
+                {{ previous }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Previous Outcome
+            </span>
+
+            <span class="detail-value">
+                {{ poutcome|title }}
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= ECONOMIC INDICATORS ================= -->
+
+<section class="section-card">
+
+    <div class="section-header">
+
+        <div class="section-accent"></div>
+
+        <div>
+
+            <h2>
+                <i class="bi bi-graph-up-arrow"></i>
+                Economic Indicators
+            </h2>
+
+            <p>Current economic environment</p>
+
+        </div>
+
+    </div>
+
+    <div class="details-grid">
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Employment Variation
+            </span>
+
+            <span class="detail-value">
+                {{ emp_var_rate }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Consumer Price Index
+            </span>
+
+            <span class="detail-value">
+                {{ cons_price_idx }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Consumer Confidence
+            </span>
+
+            <span class="detail-value">
+                {{ cons_conf_idx }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Euribor Rate
+            </span>
+
+            <span class="detail-value">
+                {{ euribor3m }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Employees
+            </span>
+
+            <span class="detail-value">
+                {{ nr_employed }}
+            </span>
+
+        </div>
+
+        <div class="detail-card">
+
+            <span class="detail-label">
+                Pdays
+            </span>
+
+            <span class="detail-value">
+                {{ pdays }}
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+</div>
+<!-- ================= ACTION BUTTONS ================= -->
+
+<div class="action-bar">
+
+    <a href="{{ url_for('step4') }}" class="btn-secondary-custom">
+        <i class="bi bi-arrow-left"></i>
+        Previous Step
+    </a>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <button type="submit" class="btn-primary-custom">
+
+            <i class="bi bi-stars"></i>
+
+            Generate AI Prediction
+
+        </button>
+
+    </form>
+
+</div>
+<footer class="review-footer">
+
+    <p>
+        Random Forest Classifier • Flask • Scikit-Learn • Python
+    </p>
+
+</footer>
+</body>
+</html>
