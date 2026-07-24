@@ -284,3 +284,15 @@ GitHub: https://github.com/rajesh5792
 # License
 
 This project is licensed under the MIT License.
+
+---
+
+## Acknowledgement
+
+This project was developed as part of my Machine Learning learning journey and demonstrates the deployment of a classification model using Flask for a real-world business use case.
+
+---
+
+## Support
+
+If you found this project useful or interesting, consider giving it a star on GitHub.
