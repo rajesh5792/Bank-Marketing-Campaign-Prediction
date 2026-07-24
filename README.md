@@ -96,7 +96,7 @@ The application allows users to enter customer details, review the information, 
 
 ### Prediction Result – Not Likely to Subscribe
 
-![Prediction No](screenshots\prediciton-not-subscribed.png)
+![Prediction No](screenshots\prediction-not-subscribed.png)
 
 ---
 
